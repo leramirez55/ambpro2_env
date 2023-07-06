@@ -1,0 +1,62 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "List Remote USB Devices",
+            "type": "shell",
+            "command": "usbip list -r $(cat remote_usb.txt)",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        },
+        {
+            "label": "Attach Device",
+            "type": "shell",
+            "command": "usbip attach -r $(cat remote_usb.txt) -b ${input:device}",
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        },
+        {
+            "label": "Set Remote Server IP",
+            "type": "shell",
+            "command": "echo ${input:ip} > remote_usb.txt",
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "never",
+                "focus": false,
+                "panel": "shared"
+            },
+        },
+        {
+            "label": "Detach Device",
+            "type": "shell",
+            "command": "usbip detach -p ${input:port}",
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            }
+        }
+    ],
+    "inputs": [
+        {
+            "id": "device",
+            "type": "promptString",
+            "description": "Enter the device name or ID to attach:"
+        },
+        {
+            "id": "ip",
+            "type": "promptString",
+            "description": "Enter the remote server IP address:"
+        }
+    ]
+}
