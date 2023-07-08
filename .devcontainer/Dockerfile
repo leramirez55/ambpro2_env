@@ -31,8 +31,11 @@ RUN chmod +x ~/ambpro2_sdk/project/realtek_amebapro2_v0_example/GCC-RELEASE/mp/e
 RUN apt-get -y install cmake 
 RUN cd ~/ambpro2_sdk/project/realtek_amebapro2_v0_example/GCC-RELEASE && \
     mkdir build && \
-    cd build && \
-    export PATH=$PATH:~/ambpro2_sdk/tools/asdk-10.3.0/linux/newlib/bin && \
-    cmake .. -G"Unix Makefiles" -DCMAKE_TOOLCHAIN_FILE=../toolchain.cmake -DVIDEO_EXAMPLE=ON && \
-    cmake --build . --target flash_nn -j4
+    cd build
+
+
+ENV PATH="${PATH}:~/ambpro2_sdk/tools/asdk-10.3.0/linux/newlib/bin" 
+# RUN cd ~/ambpro2_sdk/project/realtek_amebapro2_v0_example/GCC-RELEASE/build && \
+#     cmake .. -G"Unix Makefiles" -DCMAKE_TOOLCHAIN_FILE=../toolchain.cmake -DVIDEO_EXAMPLE=ON && \
+#     cmake --build . --target flash_nn -j4
 
