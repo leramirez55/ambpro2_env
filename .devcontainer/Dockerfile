@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:22.04
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -6,6 +6,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get -y update --no-install-recommends \
     && apt-get -y install --no-install-recommends \
     build-essential \
+    cmake \
     curl \
     ca-certificates \
     apt-utils \
@@ -35,7 +36,7 @@ RUN cd ~/ambpro2_sdk/project/realtek_amebapro2_v0_example/GCC-RELEASE && \
 
 
 ENV PATH="${PATH}:~/ambpro2_sdk/tools/asdk-10.3.0/linux/newlib/bin" 
-# RUN cd ~/ambpro2_sdk/project/realtek_amebapro2_v0_example/GCC-RELEASE/build && \
-#     cmake .. -G"Unix Makefiles" -DCMAKE_TOOLCHAIN_FILE=../toolchain.cmake -DVIDEO_EXAMPLE=ON && \
-#     cmake --build . --target flash_nn -j4
-
+RUN cd ~/ambpro2_sdk/project/realtek_amebapro2_v0_example/GCC-RELEASE/build && \
+    cmake .. -G "Unix Makefiles" -DCMAKE_TOOLCHAIN_FILE=../toolchain.cmake -DVIDEO_EXAMPLE=ON && \
+    cmake --build . --target flash_nn -j4
+    
