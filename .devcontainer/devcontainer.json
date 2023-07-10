@@ -7,7 +7,7 @@
 		"dockerfile": "Dockerfile"
 	},
 	"runArgs": [
-		"-device=/dev/ttyUSB0"
+		"--device=/dev/ttyUSB0"
 	],
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
