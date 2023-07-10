@@ -1,0 +1,3 @@
+[submodule "ambpro2_sdk"]
+	path = ambpro2_sdk
+	url = https://github.com/leramirez55/ambpro2_sdk.git
