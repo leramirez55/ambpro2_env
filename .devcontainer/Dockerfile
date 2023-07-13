@@ -13,6 +13,7 @@ RUN apt-get -y update --no-install-recommends && \
     apt-utils \
     dialog \
     git \
+    libncurses5 \
     libncurses5-dev \
     unzip \
     vim
@@ -50,7 +51,7 @@ RUN cd ~/ambpro2_sdk/tools && \
 
 #GET JLINK TOOLS 
 RUN apt-get install wget
-RUN wget https://www.segger.com/downloads/jlink/JLink_Linux_V788k_x86_64.deb
+RUN wget  --post-data "accept_license_agreement=accepted" https://www.segger.com/downloads/jlink/JLink_Linux_V788k_x86_64.deb
 #notes udevadmin is not available in the contianer we ignore the post install error as we are working with remote jlink devices.
 RUN apt-get install -y ./JLink_Linux_V788k_x86_64.deb; exit 0
 RUN rm JLink_Linux_V788k_x86_64.deb

@@ -14,7 +14,7 @@
             "interface": "swd",
             "ipAddress": "192.168.0.225",
             "device": "Cortex-M33",
-            "runToEntryPoint": "app_main",
+            "runToEntryPoint": "app_example",
             "preRestartCommands": [
                
             ],
