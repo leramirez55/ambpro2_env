@@ -49,7 +49,8 @@ RUN cd ~/ambpro2_sdk/tools && \
 
 
 #GET JLINK TOOLS 
+RUN apt-get install wget
 RUN wget https://www.segger.com/downloads/jlink/JLink_Linux_V788k_x86_64.deb
-RUN apt-get install -y ./JLink_Linux_V788k_x86_64.deb
-RUN rm ./JLink_Linux_V788k_x86_64.deb
-#INSTALL JLINK TOOLS 
+#notes udevadmin is not available in the contianer we ignore the post install error as we are working with remote jlink devices.
+RUN apt-get install -y ./JLink_Linux_V788k_x86_64.deb; exit 0
+RUN rm JLink_Linux_V788k_x86_64.deb
