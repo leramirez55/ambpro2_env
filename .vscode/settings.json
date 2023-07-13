@@ -1,0 +1,6 @@
+{
+    "mcu-debug.debug-tracker-vscode.debugLevel": 2,
+    "cortex-debug.JLinkGDBServerPath": "/opt/SEGGER/JLink/JLinkGDBServerCLExe",
+    "cortex-debug.JLinkGDBServerPath.linux": "/opt/SEGGER/JLink/JLinkGDBServerCLExe",
+    "cortex-debug.armToolchainPath": "/workspaces/ambpro2_env/ambpro2_sdk/tools/asdk-10.3.0/linux/newlib/bin",
+}

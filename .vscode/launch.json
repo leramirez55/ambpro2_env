@@ -1,0 +1,24 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug Jlink",
+            "cwd": "${workspaceRoot}",
+            "executable": "/workspaces/ambpro2_env/ambpro2_sdk/project/realtek_amebapro2_v0_example/GCC-RELEASE/build/application/output/application.ntz.axf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "jlink",
+            "interface": "swd",
+            "ipAddress": "192.168.0.225",
+            "device": "Cortex-M33",
+            "runToEntryPoint": "app_main",
+            "preRestartCommands": [
+               
+            ],
+            "showDevDebugOutput": "raw",
+        },
+    ]
+}

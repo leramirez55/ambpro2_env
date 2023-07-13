@@ -20,7 +20,10 @@
 		"vscode": {
 			"extensions": [
 				"ms-vscode.cpptools-extension-pack",
-				"mhutchie.git-graph"
+				"mhutchie.git-graph",
+				"marus25.cortex-debug",
+				"mcu-debug.memory-view",
+				"mcu-debug.rtos-views"
 			]
 		}
 	}
